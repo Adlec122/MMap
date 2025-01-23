@@ -3,94 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoneyMap</title>
+    <title>MoneyMap - LE Guide financier</title>
     <style>
+        /* Styles généraux */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
+            background-color: #121212; /* Fond sombre */
+            color: #f5f5f5; /* Texte clair */
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
         }
+
         header {
-            background-color: #4CAF50;
-            padding: 1rem;
+            background-color: #1e1e1e; /* Noir légèrement plus clair */
+            color: #f1c40f; /* Doré */
             text-align: center;
-            color: white;
+            padding: 2rem 0;
         }
+
         nav {
+            background-color: #222222; /* Très sombre */
+            padding: 1rem 0;
             display: flex;
             justify-content: center;
-            background-color: #333;
+            gap: 1.5rem;
         }
+
         nav a {
-            color: white;
-            padding: 1rem;
+            color: #f1c40f; /* Doré */
             text-decoration: none;
-            text-transform: uppercase;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #f1c40f;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
         }
+
         nav a:hover {
-            background-color: #4CAF50;
+            background-color: #f1c40f; /* Doré */
+            color: #121212; /* Texte noir pour contraste */
         }
-        .content {
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
             padding: 2rem;
-            text-align: center;
+            background-color: #1e1e1e; /* Fond sombre pour contraste */
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
         }
+
+        .container h2, .container h3 {
+            color: #f1c40f; /* Doré */
+        }
+
         footer {
+            background-color: #222222;
+            color: #f5f5f5;
             text-align: center;
-            padding: 1rem;
-            background-color: #333;
-            color: white;
+            padding: 1rem 0;
             margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Bienvenue sur MoneyMap</h1>
-        <p>Votre guide vers les finances claires et accessibles.</p>
+        <h1>MMap</h1>
+        <p>Un guide éclairé dans le monde sombre des finances</p>
     </header>
+
     <nav>
-        <a href="#home">Accueil</a>
-        <a href="#about">À propos</a>
-        <a href="#contact">Contact</a>
+        <a href="#">Accueil</a>
+        <a href="#">À propos</a>
+        <a href="#">Outils</a>
+        <a href="#">Contact</a>
     </nav>
-    <div class="content">
-        <h2>Commencez votre voyage financier</h2>
-        <p>Suivez vos progrès grâce à nos graphiques intuitifs.</p>
-        <canvas id="chart" width="400" height="200"></canvas>
+
+    <div class="container">
+        <h2>Bienvenue sur MoneyMap</h2>
+        <p>Nous sommes ici pour vous éclairer sur les mystères des finances. Suivez nos outils pour avancer étape par étape vers vos objectifs.</p>
+        
+        <h3>Fonctionnalités à venir</h3>
+        <ul>
+            <li>Simulations de portefeuille</li>
+            <li>Outils interactifs pour apprendre les bases</li>
+            <li>Conseils personnalisés</li>
+        </ul>
     </div>
+
     <footer>
-        <p>&copy; 2025 MoneyMap. Tous droits réservés.</p>
+        <p>&copy; 2025 MMap. Tous droits réservés.</p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        const ctx = document.getElementById('chart').getContext('2d');
-        const myChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai'],
-                datasets: [{
-                    label: 'Économies (€)',
-                    data: [500, 700, 800, 1000, 1200],
-                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                    borderColor: 'rgba(75, 192, 192, 1)',
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                responsive: true,
-                plugins: {
-                    legend: {
-                        display: true,
-                        position: 'top',
-                    },
-                },
-            }
-        });
-    </script>
 </body>
 </html>
+
 git add index.html
 git commit -m "Remplace le contenu Markdown par du HTML"
 git push
