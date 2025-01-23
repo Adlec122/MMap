@@ -3,10 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MMap</title>
+    <title>MoneyMap</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            padding: 1rem;
+            text-align: center;
+            color: white;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav a {
+            color: white;
+            padding: 1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        nav a:hover {
+            background-color: #4CAF50;
+        }
+        .content {
+            padding: 2rem;
+            text-align: center;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
+            margin-top: 2rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bienvenue sur MMap !</h1>
-    <p>Voici une plateforme pour apprendre les finances simplement.</p>
+    <header>
+        <h1>Bienvenue sur MoneyMap</h1>
+        <p>Votre guide vers les finances claires et accessibles.</p>
+    </header>
+    <nav>
+        <a href="#home">Accueil</a>
+        <a href="#about">À propos</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <div class="content">
+        <h2>Commencez votre voyage financier</h2>
+        <p>Suivez vos progrès grâce à nos graphiques intuitifs.</p>
+        <canvas id="chart" width="400" height="200"></canvas>
+    </div>
+    <footer>
+        <p>&copy; 2025 MoneyMap. Tous droits réservés.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('chart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai'],
+                datasets: [{
+                    label: 'Économies (€)',
+                    data: [500, 700, 800, 1000, 1200],
+                    backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                    borderColor: 'rgba(75, 192, 192, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top',
+                    },
+                },
+            }
+        });
+    </script>
 </body>
 </html>
+git add index.html
+git commit -m "Remplace le contenu Markdown par du HTML"
+git push
