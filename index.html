@@ -3,102 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MoneyMap - LE Guide financier</title>
+    <title>MoneyMap</title>
     <style>
         /* Styles généraux */
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #121212; /* Fond sombre */
-            color: #f5f5f5; /* Texte clair */
             margin: 0;
-            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: #0f172a; /* Bleu foncé */
+            color: #f2f2f2; /* Couleur claire pour le texte */
         }
 
-        header {
-            background-color: #1e1e1e; /* Noir légèrement plus clair */
-            color: #f1c40f; /* Doré */
+        /* En-tête */
+        .en-tete {
+            background: url('https://your-image-url.com') no-repeat center center/cover;
             text-align: center;
-            padding: 2rem 0;
+            padding: 4rem 2rem;
+            color: #ffd700; /* Doré */
         }
 
-        nav {
-            background-color: #222222; /* Très sombre */
-            padding: 1rem 0;
+        .en-tete h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        /* Navigation */
+        .navigation {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
-        }
-
-        nav a {
-            color: #f1c40f; /* Doré */
-            text-decoration: none;
-            font-size: 1rem;
-            padding: 0.5rem 1rem;
-            border: 1px solid #f1c40f;
-            border-radius: 5px;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        nav a:hover {
-            background-color: #f1c40f; /* Doré */
-            color: #121212; /* Texte noir pour contraste */
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 2rem auto;
-            padding: 2rem;
-            background-color: #1e1e1e; /* Fond sombre pour contraste */
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-        }
-
-        .container h2, .container h3 {
-            color: #f1c40f; /* Doré */
-        }
-
-        footer {
-            background-color: #222222;
-            color: #f5f5f5;
-            text-align: center;
+            gap: 1rem;
+            background-color: #1e293b;
             padding: 1rem 0;
-            margin-top: 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
-        footer p {
-            margin: 0;
+        .navigation a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navigation a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contenu principal */
+        .contenu {
+            padding: 2rem;
+        }
+
+        .section {
+            margin-bottom: 2rem;
+        }
+
+        /* Pied de page */
+        .pied-de-page {
+            text-align: center;
+            background-color: #1e293b;
+            padding: 1rem;
+            color: #f2f2f2;
         }
     </style>
 </head>
 <body>
-    <header>
+    <!-- En-tête -->
+    <header class="en-tete">
         <h1>MoneyMap</h1>
-        <p>Un guide éclairé dans le monde sombre des finances</p>
+        <p>Votre guide vers l'univers obscur des finances.</p>
     </header>
 
-    <nav>
-        <a href="#">Accueil</a>
-        <a href="#">À propos</a>
-        <a href="#">Outils</a>
-        <a href="#">Contact</a>
+    <!-- Barre de navigation -->
+    <nav class="navigation">
+        <a href="#section1">Accueil</a>
+        <a href="#section2">À propos</a>
+        <a href="#section3">Contact</a>
     </nav>
 
-    <div class="container">
-        <h2>Bienvenue sur MoneyMap</h2>
-        <p>Nous sommes ici pour vous éclairer sur les mystères des finances.</p>
-        <p>Suivez nos outils pour avancer étape par étape vers vos objectifs.</p>
-        
-        
-        <h3>Fonctionnalités à venir</h3>
-        <ul>
-            <li>Simulations de portefeuille</li>
-            <li>Outils interactifs pour apprendre les bases</li>
-            <li>Conseils personnalisés</li>
-        </ul>
-    </div>
+    <!-- Contenu principal -->
+    <main class="contenu">
+        <section id="section1" class="section">
+            <h2>Bienvenue sur MoneyMap</h2>
+            <p>Notre mission est de rendre les finances accessibles aux jeunes actifs. Découvrez nos outils et ressources pédagogiques pour mieux gérer votre budget.</p>
+        </section>
 
-    <footer>
-        <p>&copy; 2025 MMap. Tous droits réservés.</p>
+        <section id="section2" class="section">
+            <h2>À propos</h2>
+            <p>MoneyMap est né de la passion pour la transmission des connaissances financières. Nous croyons que chacun mérite de maîtriser ses finances.</p>
+        </section>
+
+        <section id="section3" class="section">
+            <h2>Contact</h2>
+            <p>Envoyez-nous un message à : contact@moneymap.com</p>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="pied-de-page">
+        <p>&copy; 2025 MoneyMap. Tous droits réservés.</p>
     </footer>
 </body>
 </html>
