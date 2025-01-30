@@ -80,6 +80,41 @@
         .retour a:hover {
             text-decoration: underline;
         }
+
+        .badge-container {
+            position: fixed;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 1000;
+        }
+
+        .badge {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .badge-bronze {
+            background-color: #cd7f32;
+        }
+
+        .badge-silver {
+            background-color: #c0c0c0;
+        }
+
+        .badge-gold {
+            background-color: #ffd700;
+        }
     </style>
 </head>
 <body>
@@ -95,7 +130,13 @@
         <a href="outils.html">Retour à Outils</a>
     </div>
 
+    <div class="badge-container" id="badge-container">
+        <!-- Les badges seront ajoutés ici -->
+    </div>
+
     <script>
+        let completedTasks = 0;
+
         document.addEventListener("DOMContentLoaded", function() {
             const challengeData = [
                 "Définis un objectif d'épargne clair et atteignable.",
@@ -155,6 +196,33 @@
             dayButton.classList.add("completed");
             button.disabled = true;
             button.innerText = "✅ Terminé !";
+
+            completedTasks++;
+            updateBadgeDisplay();
+        }
+
+        function updateBadgeDisplay() {
+            const badgeContainer = document.getElementById('badge-container');
+            badgeContainer.innerHTML = ''; // Réinitialise les badges affichés
+
+            if (completedTasks >= 5) {
+                const badgeBronze = document.createElement('div');
+                badgeBronze.classList.add('badge', 'badge-bronze');
+                badgeBronze.textContent = '5/5';
+                badgeContainer.appendChild(badgeBronze);
+            }
+            if (completedTasks >= 15) {
+                const badgeSilver = document.createElement('div');
+                badgeSilver.classList.add('badge', 'badge-silver');
+                badgeSilver.textContent = '15/15';
+                badgeContainer.appendChild(badgeSilver);
+            }
+            if (completedTasks >= 30) {
+                const badgeGold = document.createElement('div');
+                badgeGold.classList.add('badge', 'badge-gold');
+                badgeGold.textContent = '30/30';
+                badgeContainer.appendChild(badgeGold);
+            }
         }
     </script>
 </body>
